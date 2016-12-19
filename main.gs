@@ -17,7 +17,7 @@ function cssToObj(css){
     thisElementsStyleObj = {};
     
     for (j in thisElements){
-      thisElementsStyle = thisElements[j].split(':');
+      thisElementsStyle = thisElements[j].split(/:(?!\/\/)/g); // split elements except if they are part of :// like in http://
       thisElementsStyleProperty = thisElementsStyle[0];
       thisElementsStyleElement = thisElementsStyle[1];
       thisElementsStyleObj[thisElementsStyleProperty] = thisElementsStyleElement;
