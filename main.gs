@@ -19,7 +19,7 @@ function cssToObj(css){
     for (j in thisElements){
       thisElementsStyle = thisElements[j].split(/:(?!\/\/)/g); // split elements except if they are part of :// like in http://
       thisElementsStyleProperty = thisElementsStyle[0];
-      thisElementsStyleElement = thisElementsStyle[1];
+      thisElementsStyleElement = thisElementsStyle[1].replace('"',"'");  // make sure only single quotes surround http url's
       thisElementsStyleObj[thisElementsStyleProperty] = thisElementsStyleElement;
     }
     cssAsObj[thisProperty] = thisElementsStyleObj;
@@ -35,5 +35,6 @@ function objToCss(obj){
   for (i in obj){
     objAsCss += i + JSON.stringify(obj[i]);
   }
+  objAsCss = objAsCss.replace(/"/g,'');  //removes all the "'s from the string
   return objAsCss;
 };
