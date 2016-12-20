@@ -21,7 +21,7 @@ function cssToObj(css){
 //      thisElementsStyle = thisElements[j].split(':');
       thisElementsStyle = thisElements[j].split(/:(?!\/\/)/g).filter(function(e){return e}); // split elements except if they are part of :// like in http://
       thisElementsStyleProperty = thisElementsStyle[0];
-      thisElementsStyleElement = thisElementsStyle[1].replace('"',"'");  // make sure only single quotes surround http url's
+      thisElementsStyleElement = thisElementsStyle[1].replace(/"/g,"'");  // make sure only single quotes surround http url's
       thisElementsStyleObj[thisElementsStyleProperty] = thisElementsStyleElement;
     }
     cssAsObj[thisProperty] = thisElementsStyleObj;
