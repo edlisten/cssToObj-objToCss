@@ -43,3 +43,16 @@ function objToCss(obj){
   }
   return objAsCss;
 };
+
+
+function hexToRGBA(color){
+//  color = ["#b53e3e", "1"];
+  var hex = color[0];
+  var r = '0x' + hex[1] + hex[2] | 0;
+  var g = '0x' + hex[3] + hex[4] | 0;
+  var b = '0x' + hex[5] + hex[6] | 0;
+  var a = color[1];
+  var rgba = "rgba("+r+","+g+","+b+","+a+")";
+  return rgba;
+}
+
