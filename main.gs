@@ -1,5 +1,5 @@
 function cssToObj(css){
-//  css = 'body{background-image:url("http://www.lifestylestone.com/wp-content/uploads/2012/12/Slate-Slab-Blue-Grey.jpg");background-color:#ffffff}.block{color:#ff0000;background-color:#000000}';
+//    css = 'body{background-image:url("http://www.lifestylestone.com/wp-content/uploads/2012/12/Slate-Slab-Blue-Grey.jpg");background-color:#ffffff}.block{color:#ff0000;background-color:#000000}';
 //    css = 'body{background-image:url("http://www.lifestylestone.com/wp-content/uploads/2012/12/Slate-Slab-Blue-Grey.jpg");background-color:#ffffff;}.block{color:#ff0000;background-color:#000000;}';
   var cssAsArray,thisStyle,thisProperty,thisElements,thisElementsObj,cssAsObj,thisElementsStyle,thisElementsStyleProperty,thisElementsStyleElement,thisElementsStyleObj;
   cssAsObj ={};
@@ -26,7 +26,6 @@ function cssToObj(css){
     }
     cssAsObj[thisProperty] = thisElementsStyleObj;
   }
-  Logger.log(JSON.stringify(cssAsObj));
   return cssAsObj;
 }
 
