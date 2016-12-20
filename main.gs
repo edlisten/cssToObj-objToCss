@@ -29,12 +29,15 @@ function cssToObj(css){
 
 
 function objToCss(obj){
-//  obj = {"body":{"background-color":"rgb(255, 255, 255)"},".block":{"color":"rgb(0, 0, 0)","background-color":"rgb(147, 147, 147)"}};
+//  obj = {"body":{"background-image":"url('http://www.lifestylestone.com/wp-content/uploads/2012/12/Slate-Slab-Blue-Grey.jpg')","background-color":"#ffffff"},".block":{"color":"#ff0000","background-color":"#000000"}};
   var objAsCss='';
   
   for (i in obj){
-    objAsCss += i + JSON.stringify(obj[i]);
+    var elementString = '';
+    for (j in obj[i]){
+      elementString += j + ":" + obj[i][j] + ";";
+    }
+    objAsCss += i +'{'+ elementString + "}";
   }
-  objAsCss = objAsCss.replace(/"/g,'');  //removes all the "'s from the string
   return objAsCss;
 };
