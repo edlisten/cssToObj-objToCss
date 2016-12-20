@@ -56,3 +56,15 @@ function hexToRGBA(color){
   return rgba;
 }
 
+function rgbaToHex(rgba){
+  rgba = 'rgba(226,43,43,.5)';
+  var rgb = rgba.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+(\.\d*)?|\.\d+)[\s+]?/i);
+  var hex = (rgb && rgb.length === 6) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+  var a = rgb[4];
+  var color = [hex,a];
+  return color;
+}
+
